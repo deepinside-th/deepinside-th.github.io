@@ -6,7 +6,7 @@
 <title>Deepinside Studio</title>
 <meta name="description" content="ไฟล์ลับของช่อง deepinside: คู่มือทำซีรีส์ What If แบบโหวตรายวัน และสกิล Claude Code ที่ทำคลิปให้ทั้งตอน">
 <meta property="og:title" content="Deepinside Studio · ไฟล์ลับของช่อง What If">
-<meta property="og:description" content="Playbook ฿199 · What If Studio ฿790 · จากช่องที่คลิปเดียวได้ 76,500 วิว">
+<meta property="og:description" content="Playbook ฿99 · Studio ฿590 · Studio Pro ฿990 · จากช่องที่คลิปเดียวได้ 76,500 วิว">
 <meta property="og:image" content="https://deepinside-th.github.io/assets/studio-demo.jpg">
 <meta name="theme-color" content="#0b0d14">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,6 +86,7 @@ section.alt{background:var(--panel)}
 
 /* product cards */
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cards.three{grid-template-columns:repeat(3,1fr)}
 .card{background:var(--panel);border-radius:18px;padding:28px;display:grid;gap:16px;align-content:start;border:1px solid var(--line)}
 .card.hot{border-color:var(--gold)}
 .card .tag{font:600 12px var(--display);letter-spacing:.18em;color:var(--dim)}
@@ -102,6 +103,7 @@ section.alt{background:var(--panel)}
 .files div{background:var(--bg);border-radius:14px;padding:18px;counter-increment:f}
 .files div::before{content:"FILE " counter(f,decimal-leading-zero);font:600 12px var(--display);letter-spacing:.14em;color:var(--red);display:block;margin-bottom:6px}
 .files p{font-size:14px;color:var(--muted);margin-top:4px}
+.files.plan div::before{content:"STEP " counter(f)}
 .pages{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
 .pages figure{margin:0;display:grid;gap:8px}
 .pages img{border-radius:10px;border:1px solid var(--line);width:100%;height:auto;background:#fff}
@@ -158,6 +160,7 @@ details[open] summary::after{content:"−"}
 details p{color:var(--muted);margin-top:10px;font-size:15px}
 footer{padding:36px 0 56px;color:var(--dim);font-size:13px;border-top:1px solid var(--line)}
 
+@media (max-width:1020px){.cards.three{grid-template-columns:1fr;max-width:560px}}
 @media (max-width:860px){
   .hero .wrap,.studio,.buy,.cards{grid-template-columns:1fr}
   .files{grid-template-columns:1fr 1fr}
@@ -179,7 +182,7 @@ footer{padding:36px 0 56px;color:var(--dim);font-size:13px;border-top:1px solid 
 <header><div class="wrap">
   <a class="brand" href="#top"><i>?</i><em style="font-style:normal">deep<span>inside</span></em></a>
   <nav>
-    <a href="#playbook">Playbook</a><a href="#studio">Studio</a><a href="#buy">ซื้อ</a><a href="#faq">คำถาม</a>
+    <a href="#playbook">Playbook</a><a href="#studio">Studio</a><a href="#pro">Pro</a><a href="#buy">ซื้อ</a><a href="#faq">คำถาม</a>
     <a class="ig" href="https://www.instagram.com/deepxinside.th/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>@deepxinside.th</a>
   </nav>
@@ -190,10 +193,10 @@ footer{padding:36px 0 56px;color:var(--dim);font-size:13px;border-top:1px solid 
     <div>
       <div class="kicker">Case files · เปิดเผยแล้ว</div>
       <h1 style="margin-top:16px">เบื้องหลังคลิป "ถ้าคุณ..." ที่ได้ <span style="color:var(--gold)">158,809</span> วิวใน 7 วัน</h1>
-      <p class="lead">ช่อง deepinside ทำคลิปเรื่องสมมติให้คนดูโหวตตอนต่อไปทุกวัน ทั้งที่ยังทำงานประจำ เพราะมีระบบที่ <span class="redact" tabindex="0">ใช้ Claude ทำแทน</span> วันนี้เปิดให้ซื้อไปใช้ได้แล้ว 2 ชุด</p>
+      <p class="lead">ช่อง deepinside ทำคลิปเรื่องสมมติให้คนดูโหวตตอนต่อไปทุกวัน ทั้งที่ยังทำงานประจำ เพราะมีระบบที่ <span class="redact" tabindex="0">ใช้ Claude ทำแทน</span> วันนี้เปิดให้ซื้อไปใช้ได้แล้ว 3 ชุด ราคาเปิดตัวถึง 31 ธ.ค. 2569</p>
       <div class="row">
-        <a class="btn gold" href="#studio">ดู What If Studio</a>
-        <a class="btn line" href="#playbook">Playbook ฿199</a>
+        <a class="btn gold" href="#products">ดูทั้ง 3 ชุด</a>
+        <a class="btn line" href="#playbook">Playbook ฿99</a>
       </div>
     </div>
     <div class="phone">
@@ -213,26 +216,34 @@ footer{padding:36px 0 56px;color:var(--dim);font-size:13px;border-top:1px solid 
 
   <section class="alt" id="products"><div class="wrap">
     <div class="head">
-      <div class="kicker">2 ไฟล์ลับ</div>
+      <div class="kicker">3 ไฟล์ลับ · ราคาเปิดตัวถึง 31 ธ.ค. 2569</div>
       <h2>เลือกตามว่าคุณอยากทำเองแค่ไหน</h2>
     </div>
-    <div class="cards">
+    <div class="cards three">
       <div class="card">
         <div class="tag">CASE FILE 01 · PDF</div>
         <h3>What If Series Playbook</h3>
         <p class="muted">คู่มือคิดซีรีส์ เขียนบท ทำฮุก และโพสต์ 4 แพลตฟอร์ม ใช้กับ CapCut หรือโปรแกรมไหนก็ได้ ไม่ต้องเขียนโค้ด</p>
-        <div class="price">฿199<s>฿390</s></div>
-        <ul><li>PDF ภาษาไทย 16 หน้า 6 ไฟล์ + แบบฟอร์มว่าง</li><li>บทพากย์จริงของตอนที่ได้ 76,500 วิว</li><li>ราคานี้ถึง 30 พ.ย. 2569</li></ul>
+        <div class="price">฿99<s>฿199</s></div>
+        <ul><li>PDF ภาษาไทย 16 หน้า 6 ไฟล์ + แบบฟอร์มว่าง</li><li>บทพากย์จริงของตอนที่ได้ 76,500 วิว</li></ul>
         <a class="btn line" href="#playbook">ดูข้างใน</a>
       </div>
-      <div class="card hot">
-        <span class="badge">ทำคลิปให้ทั้งตอน</span>
+      <div class="card">
         <div class="tag">CASE FILE 02 · CLAUDE CODE SKILL</div>
         <h3>What If Studio</h3>
-        <p class="muted">คุณเขียนบทกับอัดเสียง TTS ที่เหลือ Claude ทำให้ ตั้งแต่วาดฉาก ขยับตัวละคร ใส่ซับ เพลง และเสียงเอฟเฟกต์ จนได้คลิปพร้อมลง</p>
-        <div class="price">฿790</div>
-        <ul><li>มี Playbook แล้วจ่ายแค่ ฿591</li><li>ภาพวาดด้วยโค้ด ไม่ต้องเจนภาพ ไม่ต้องเขียนพร็อมป์</li><li>เพลง 7 เพลง 6 อารมณ์ เลือกให้ตามบท</li></ul>
-        <a class="btn gold" href="#studio">ดูตัวอย่าง</a>
+        <p class="muted">คุณเขียนบท ที่เหลือ Claude ทำให้ ตั้งแต่ทำเสียง TTS วาดฉาก ขยับตัวละคร ใส่ซับ เพลง และเสียงเอฟเฟกต์ จนได้คลิปพร้อมลง</p>
+        <div class="price">฿590<s>฿790</s></div>
+        <ul><li>ทำเสียง TTS ให้ (ElevenLabs บัญชีคุณ หรือเสียงไทยฟรี) ยืนยันก่อนใช้เครดิตทุกครั้ง</li><li>ตัวเลข เงิน เวลา อ่านเหมือนคนพูด</li><li>ภาพวาดด้วยโค้ด ไม่ต้องเจนภาพ · เพลง 7 เพลง 6 อารมณ์</li><li>ตรวจบทอัตโนมัติก่อนอัดเสียง · โบนัส prompt 10 สไตล์</li></ul>
+        <a class="btn line" href="#studio">ดูตัวอย่าง</a>
+      </div>
+      <div class="card hot">
+        <span class="badge">ไม่ต้องคิดเรื่องเอง</span>
+        <div class="tag">CASE FILE 03 · STUDIO + PLANNER</div>
+        <h3>What If Studio Pro</h3>
+        <p class="muted">บอกแค่ว่าอยากทำคลิปแนวไหน Claude หาเรื่องที่คนกำลังพูดถึง เสนอไอเดีย เขียนบท วางแผน 7 ตอนและแผนโพสต์ แล้วทำคลิปต่อให้จนจบ</p>
+        <div class="price">฿990<s>฿1,490</s></div>
+        <ul><li>ทุกอย่างใน Studio</li><li>ระบบวางแผนจากแนวคลิป 7 ขั้น</li><li>สกิล gemini-image: เจนภาพทั้งตอนด้วยคำสั่งเดียว ใช้บัญชี Google ฟรีของคุณ</li><li>แถม Playbook PDF</li></ul>
+        <a class="btn gold" href="#pro">ดูตัวอย่างแผนจริง</a>
       </div>
     </div>
   </div></section>
@@ -269,12 +280,15 @@ footer{padding:36px 0 56px;color:var(--dim);font-size:13px;border-top:1px solid 
         <p class="muted">คลิปซ้ายมือทำด้วยสกิลนี้ทั้งหมด ภาพ การขยับ ซับ เพลง และเสียงเอฟเฟกต์ ไม่ได้ตัดต่อเองเลย</p>
       </div>
       <div class="feat">
+        <div><b>ทำเสียง TTS ให้</b><p>ElevenLabs บัญชีคุณ (ใช้เสียงโคลนตัวเองได้) หรือเสียงไทยฟรี โชว์บทกับเครดิตก่อน ยืนยันแล้วค่อยทำ แก้บรรทัดเดียวจ่ายบรรทัดเดียว</p></div>
+        <div><b>ตัวเลขอ่านถูก</b><p>"108 ล้าน" "1.5 ล้าน" "19:30" อ่านเหมือนคนพูด ไม่ต้องแก้บททีละคำ</p></div>
         <div><b>การ์ตูนวาดด้วยโค้ด</b><p>ตัวละคร 8 ท่า ห้อง มือถือ ป้าย HUD ไม่ต้องเจนภาพ</p></div>
         <div><b>เพลงตามอารมณ์</b><p>7 เพลง 6 อารมณ์ Claude อ่านบทแล้วเลือกให้</p></div>
         <div><b>เสียงเอฟเฟกต์ 28 แบบ</b><p>ใส่ตรงจังหวะภาพอัตโนมัติ</p></div>
         <div><b>ซับตรงเสียง</b><p>ตัดช่วงเงียบให้ ไม่เร่งเสียง และเช็กซับกับเสียงจริง</p></div>
         <div><b>ฉากโหวต A/B</b><p>จบทุกตอนด้วยคำถามให้คนดูคอมเมนต์</p></div>
         <div><b>ได้ครบทุกตอน</b><p>คลิปมี/ไม่มีเพลง ปก 2 แบบ ชุดโพสต์ 4 แพลตฟอร์ม</p></div>
+        <div><b>โบนัส: prompt 10 สไตล์</b><p>ตัวละครเดียว 10 ลุค ก๊อปวางในแชต Claude ได้เลย <a href="assets/bonus-10-styles.jpg" target="_blank" rel="noopener">ดูตัวอย่าง</a></p></div>
       </div>
       <div class="honest" id="need">
         <div>
@@ -282,7 +296,7 @@ footer{padding:36px 0 56px;color:var(--dim);font-size:13px;border-top:1px solid 
           <ul>
             <li>คอม Windows 10/11 ว่างราว 2 GB (Mac ใช้ได้ แต่ยังเป็นรุ่นทดลอง)</li>
             <li>Claude แพ็กเกจ Pro ขึ้นไป ราว 20 ดอลลาร์ (~฿700) ต่อเดือน จ่ายให้ Anthropic แยกจากค่าสกิล</li>
-            <li>ไฟล์เสียงพากย์ TTS ภาษาไทย เจ้าไหนก็ได้ (ทำเอง)</li>
+            <li>เสียงพากย์: อัดเองเจ้าไหนก็ได้ หรือให้ Claude ทำผ่าน ElevenLabs (บัญชีและเครดิตของคุณ) หรือเสียงไทยฟรีของ Microsoft Edge (ไม่เป็นทางการ อาจใช้ไม่ได้บางวัน)</li>
             <li>เน็ตสำหรับโหลดโมเดลถอดเสียงครั้งแรกราว 700 MB, ติดตั้ง 10-30 นาที</li>
           </ul>
         </div>
@@ -292,15 +306,51 @@ footer{padding:36px 0 56px;color:var(--dim);font-size:13px;border-top:1px solid 
             <li>คนที่จะใช้แค่มือถือหรือ iPad</li>
             <li>คนที่ไม่อยากจ่ายค่า Claude Pro</li>
             <li>คนที่อยากได้คลิปพูดหน้ากล้อง หรือภาพเหมือนจริงแบบ AI video</li>
-            <li>คนที่อยากได้สไตล์อื่นนอกจากการ์ตูนเวกเตอร์ (ตอนนี้มีลุคเดียว)</li>
+            <li>คนที่อยากให้สกิลทำทั้งตอนในสไตล์อื่น (ตัวสกิลมีลุคเวกเตอร์ลุคเดียว ส่วน 10 สไตล์โบนัสเป็น prompt สำหรับแอนิเมชันสั้น)</li>
           </ul>
         </div>
       </div>
-      <div class="row" style="margin-top:22px;align-items:center;gap:16px"><a class="btn gold" href="#buy" data-pick="790">ซื้อ Studio ฿790</a><a class="install-link" id="install-link" href="assets/install.mp4" target="_blank" rel="noopener" hidden>▶ ดูวิธีติดตั้ง 2 นาที</a></div>
+      <div class="row" style="margin-top:22px;align-items:center;gap:16px"><a class="btn gold" href="#buy" data-pick="590">ซื้อ Studio ฿590</a><a class="btn line" href="#pro">ดู Pro</a><a class="install-link" id="install-link" href="assets/install.mp4" target="_blank" rel="noopener" hidden>▶ ดูวิธีติดตั้ง 2 นาที</a></div>
     </div>
   </div></section>
 
-  <section id="buy"><div class="wrap">
+  <section id="pro"><div class="wrap">
+    <div class="head">
+      <div class="kicker">Case file 03 · Pro</div>
+      <h2>พิมพ์แค่ "อยากทำคลิปแนวมนุษย์เงินเดือน"</h2>
+      <p class="muted">นี่คือผลจริงจากการรันครั้งแรกเมื่อ 15 พ.ย. 2569 ไม่ได้แต่งเพิ่ม Claude ทำครบทุกขั้นแล้วเก็บเป็นไฟล์ให้ทั้งหมด</p>
+    </div>
+    <div class="files plan">
+      <div><h3>หาเรื่องที่คนพูดถึง</h3><p>Google Trends ไทย + ข่าว ได้ 8 เรื่อง พร้อมลิงก์และวันที่ เช่น เลิกจ้างเดือนละสี่หมื่นคน, AI เริ่มทำงานแทนคนออฟฟิศ, ขึ้นเงินเดือนแค่ 2-3%</p></div>
+      <div><h3>ห้าไอเดียพร้อมคะแนน</h3><p>ให้คะแนน hook, ทำไมต้องตอนนี้, A/B สูสีไหม, วาดง่ายไหม, ปลอดภัยไหม แล้วแนะนำหนึ่งเรื่อง</p></div>
+      <div><h3>แผน 7 ตอน</h3><p>กฎของเรื่อง ตัวละคร hook ใหม่ทุกตอน และตอนจบ 3 แบบตามผลโหวต</p></div>
+      <div><h3>บทที่ผ่านการตรวจ</h3><p>ร่างแรกยาว 88 วิ ระบบตรวจเจอ ตัดเหลือ 73 วิ มีจุดหักมุมสม่ำเสมอ ไม่พูดเรื่องโหวตก่อนท้ายคลิป</p></div>
+      <div><h3>แผนฉาก</h3><p>20 ช็อต บอกเวลา สิ่งที่ขยับ ของที่ต้องวาด และเสียงเอฟเฟกต์</p></div>
+      <div><h3>แผนโพสต์</h3><p>ปฏิทินลงคลิป แคปชันก๊อปวาง 4 แพลตฟอร์ม สิ่งที่ต้องทำชั่วโมงแรก และวันรุ่งขึ้นต้องดูยอดตรงไหน</p></div>
+    </div>
+    <div class="honest" style="margin-top:22px">
+      <div>
+        <b class="t">ไอเดียที่ระบบแนะนำ (23/25 คะแนน)</b>
+        <ul>
+          <li><b>Hook:</b> ทุกวันศุกร์ หัวหน้าคุณไล่คนออกหนึ่งคน แต่หัวหน้าคนนี้ไม่ใช่คน</li>
+          <li><b>ทำไมตอนนี้:</b> ข่าวเลย์ออฟ + AI แทนงานออฟฟิศ + บริษัททดลองให้ AI เป็นหัวหน้า</li>
+          <li><b>โหวต:</b> พิมพ์ชื่อคนอื่นให้โดนแทน / ลบ AI ทิ้ง (ผิดกฎหมาย กล้องเห็น)</li>
+        </ul>
+      </div>
+      <div class="no">
+        <b class="t">บอกตรงๆ</b>
+        <ul>
+          <li>ไม่มีใครการันตียอดวิวได้ ระบบช่วยเลือกเรื่องและวางโครง แล้วคุณปรับตามยอดจริง</li>
+          <li>บางครั้งข่าวเดือนนี้ยังค้นไม่เจอ ระบบจะบอกว่าข่าวใหม่สุดที่หาได้เป็นของเดือนไหน ไม่แต่งเอง</li>
+          <li>เรื่องในคลิปเป็นเรื่องแต่ง ไม่เล่าคดีจริงของคนจริง ไม่ลอกช่องอื่น</li>
+          <li>Claude ไม่โพสต์แทนคุณ และไม่ขอรหัสผ่านใดๆ</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row" style="margin-top:22px;gap:16px;align-items:center"><a class="btn gold" href="#buy" data-pick="990">ซื้อ Pro ฿990</a><span class="small">มี Studio แล้ว อัปเกรดเป็น Pro จ่ายเพิ่ม ฿400</span></div>
+  </div></section>
+
+  <section id="buy" class="alt"><div class="wrap">
     <div class="head">
       <div class="kicker">ซื้อ</div>
       <h2>เลือกชุด สแกนจ่าย ส่งสลิป</h2>
@@ -309,9 +359,10 @@ footer{padding:36px 0 56px;color:var(--dim);font-size:13px;border-top:1px solid 
     <div class="buy">
       <div style="display:grid;gap:22px">
         <div class="choose" role="radiogroup" aria-label="เลือกชุด">
-          <label><input type="radio" name="p" value="199" checked><span>Playbook (PDF)<small>ส่งลิงก์ดาวน์โหลดทางอีเมลและไลน์</small></span><b>฿199</b></label>
-          <label><input type="radio" name="p" value="790"><span>What If Studio<small>ไฟล์ zip พร้อมตัวติดตั้ง</small></span><b>฿790</b></label>
-          <label><input type="radio" name="p" value="591"><span>Studio สำหรับคนที่มี Playbook<small>แนบสลิป Playbook เดิมมาด้วย</small></span><b>฿591</b></label>
+          <label><input type="radio" name="p" value="99" checked><span>Playbook (PDF)<small>ส่งลิงก์ดาวน์โหลดทางอีเมลและไลน์</small></span><b>฿99</b></label>
+          <label><input type="radio" name="p" value="590"><span>What If Studio<small>ไฟล์ zip พร้อมตัวติดตั้ง</small></span><b>฿590</b></label>
+          <label><input type="radio" name="p" value="990"><span>What If Studio Pro<small>Studio + ระบบวางแผน + gemini-image + Playbook</small></span><b>฿990</b></label>
+          <label><input type="radio" name="p" value="400"><span>อัปเกรด Studio เป็น Pro<small>ใช้อีเมลเดียวกับที่ซื้อ Studio</small></span><b>฿400</b></label>
         </div>
         <ol class="steps">
           <li><span>สแกน QR ด้วยแอปธนาคาร ชื่อบัญชีที่ขึ้นต้องเป็น <b>นาย อัลฮาคิมห์ อับดุลเลาะ</b> (พร้อมเพย์ 093-619-3998)</span></li>
@@ -324,21 +375,21 @@ footer{padding:36px 0 56px;color:var(--dim);font-size:13px;border-top:1px solid 
           <label>ชื่อ LINE (ไม่บังคับ)<input type="text" name="line" maxlength="60"></label>
           <label>รูปสลิป<input type="file" name="slip" accept="image/*" required></label>
           <label class="hp" aria-hidden="true">เว็บไซต์<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
-          <button class="btn gold" type="submit" id="send">ส่งออเดอร์ ฿199</button>
+          <button class="btn gold" type="submit" id="send">ส่งออเดอร์ ฿99</button>
           <div class="msg" id="msg" role="status" aria-live="polite"></div>
         </form>
         <p class="small">ไม่สะดวกกรอกฟอร์ม? <a href="https://line.me/R/ti/p/@017usmbe" target="_blank" rel="noopener">ส่งสลิปทาง LINE @017usmbe</a></p>
       </div>
       <div class="qrbox">
         <div class="small" id="qr-name">Playbook (PDF)</div>
-        <img id="qr" src="assets/qr-199.png" alt="QR พร้อมเพย์ ยอด 199 บาท" width="240" height="240">
-        <div class="amt" id="qr-amt">฿199</div>
+        <img id="qr" src="assets/qr-99.png" alt="QR พร้อมเพย์ ยอด 99 บาท" width="240" height="240">
+        <div class="amt" id="qr-amt">฿99</div>
         <p class="small">พร้อมเพย์ 093-619-3998 · นาย อัลฮาคิมห์ อับดุลเลาะ<br>บนมือถือ: แคปหน้าจอ QR แล้วเปิดในแอปธนาคาร</p>
       </div>
     </div>
   </div></section>
 
-  <section class="alt"><div class="wrap">
+  <section><div class="wrap">
     <div class="channel">
       <div class="avatar">?</div>
       <div>
@@ -349,14 +400,17 @@ footer{padding:36px 0 56px;color:var(--dim);font-size:13px;border-top:1px solid 
     </div>
   </div></section>
 
-  <section id="faq"><div class="wrap" style="max-width:780px">
+  <section id="faq" class="alt"><div class="wrap" style="max-width:780px">
     <div class="head"><div class="kicker">FAQ</div><h2>คำถามที่เจอบ่อย</h2></div>
     <details><summary>ต้องมี Claude หรือ AI ตัวไหนไหม</summary><p>Playbook ไม่ต้อง ใช้กับ CapCut หรือโปรแกรมไหนก็ได้ ส่วน Studio ต้องมี Claude Code แพ็กเกจ Pro ขึ้นไป</p></details>
+    <details><summary>Studio กับ Pro ต่างกันยังไง</summary><p>Studio: คุณมีบทอยู่แล้ว Claude ทำเสียงและทำคลิปให้ Pro: คุณบอกแค่แนวคลิป Claude หาเรื่อง เสนอไอเดีย เขียนบท วางแผนทั้งสัปดาห์และแผนโพสต์ให้ด้วย พร้อมสกิลเจนภาพ gemini-image และ Playbook ซื้อ Studio ไปก่อนแล้วอัปเกรดทีหลังได้ จ่ายเพิ่ม ฿400</p></details>
+    <details><summary>ทำเสียง TTS ต้องจ่ายเพิ่มไหม</summary><p>เสียงไทยฟรีของ Microsoft Edge ไม่ต้องจ่าย (แต่ไม่เป็นทางการ อาจใช้ไม่ได้บางวัน) ถ้าใช้ ElevenLabs ใช้บัญชีและเครดิตของคุณเอง ก่อนทำทุกครั้ง Claude จะโชว์บทที่จะอ่านกับเครดิตที่ใช้ แล้วรอคุณพิมพ์รหัสยืนยันก่อน key ของคุณเก็บในเครื่องคุณ ไม่ได้ส่งมาที่เรา</p></details>
+    <details><summary>ราคานี้ถึงเมื่อไหร่</summary><p>ราคาเปิดตัวถึง 31 ธ.ค. 2569 หลังจากนั้นเป็น ฿199 / ฿790 / ฿1,490 คนที่ซื้อแล้วได้อัปเดตรุ่นถัดไปฟรี</p></details>
     <details><summary>Studio ติดตั้งยากไหม</summary><p>แตกไฟล์ zip แล้วดับเบิลคลิก install.bat รอราว 10-30 นาที (โหลดโมเดลถอดเสียงไทยราว 700 MB) ติดตรงไหนทักไลน์ได้ ช่วยดูให้</p></details>
     <details><summary>คลิปที่ทำด้วย Studio เป็นของใคร</summary><p>เป็นของคุณ ลงช่องตัวเอง สร้างรายได้ หรือรับงานลูกค้าได้ไม่จำกัด แต่ห้ามแจกหรือขายตัวสกิลต่อ</p></details>
     <details><summary>ได้ไฟล์ทางไหน</summary><p>ลิงก์ Google Drive ที่เปิดได้เฉพาะอีเมลของคุณ ส่งเข้าไลน์และอีเมล ดาวน์โหลดเก็บไว้ได้ตลอด</p></details>
     <details><summary>ใช้บนมือถือได้ไหม</summary><p>ไม่ได้ Studio ต้องรันบนคอม Windows หรือ Mac เพราะต้องใช้ Claude Code วาดและเรนเดอร์คลิปในเครื่อง ส่วน Playbook อ่านบนมือถือได้</p></details>
-    <details><summary>นอกจากค่าสกิล ต้องจ่ายอะไรอีกไหม</summary><p>ค่า Claude แพ็กเกจ Pro ราว ฿700 ต่อเดือน (จ่ายให้ Anthropic เอง สมัครเดือนเดียวก็ลองได้) กับค่าเสียงพากย์ TTS ถ้าเจ้าที่ใช้คิดเงิน ตัวสกิลไม่มีค่าเจนภาพ เพราะวาดด้วยโค้ดทั้งหมด</p></details>
+    <details><summary>นอกจากค่าสกิล ต้องจ่ายอะไรอีกไหม</summary><p>ค่า Claude แพ็กเกจ Pro ราว ฿700 ต่อเดือน (จ่ายให้ Anthropic เอง สมัครเดือนเดียวก็ลองได้) กับค่าเสียงพากย์ถ้าใช้ ElevenLabs (มีเสียงฟรีให้เลือก) ตัวสกิลไม่มีค่าเจนภาพ เพราะวาดด้วยโค้ดทั้งหมด ส่วน gemini-image ใน Pro ใช้โควตาฟรีของบัญชี Google คุณ</p></details>
     <details><summary>คืนเงินได้ไหม</summary><p>เป็นสินค้าดิจิทัล จึงไม่คืนเงินหลังส่งไฟล์ ยกเว้นไฟล์เปิดไม่ได้หรือโอนซ้ำ ทักมาได้ทันที</p></details>
   </div></section>
 </main>
@@ -375,7 +429,7 @@ footer{padding:36px 0 56px;color:var(--dim);font-size:13px;border-top:1px solid 
     v.muted = !v.muted; if (!v.muted) { v.currentTime = 0; v.play(); }
     b.textContent = v.muted ? "เปิดเสียง" : "ปิดเสียง"; b.setAttribute("aria-pressed", String(!v.muted));
   });
-  const names = { 199: "Playbook (PDF)", 790: "What If Studio", 591: "Studio สำหรับคนที่มี Playbook" };
+  const names = { 99: "Playbook (PDF)", 590: "What If Studio", 990: "What If Studio Pro", 400: "อัปเกรด Studio เป็น Pro" };
   const pick = (val) => {
     document.getElementById("qr").src = "assets/qr-" + val + ".png";
     document.getElementById("qr").alt = "QR พร้อมเพย์ ยอด " + val + " บาท";
@@ -386,11 +440,12 @@ footer{padding:36px 0 56px;color:var(--dim);font-size:13px;border-top:1px solid 
   };
   document.querySelectorAll("input[name=p]").forEach((r) => r.addEventListener("change", () => pick(r.value)));
   document.querySelectorAll("[data-pick]").forEach((a) => a.addEventListener("click", () => pick(a.dataset.pick)));
-  if (location.hash === "#studio-buy") pick(790);
+  if (location.hash === "#studio-buy") pick(590);
+  if (location.hash === "#pro-buy") pick(990);
 
   // order form -> Google Apps Script web app (store/orders/Code.gs). Empty ENDPOINT = form hidden, LINE only.
   const ENDPOINT = "https://script.google.com/macros/s/AKfycbzRydQlQ5sOm9VQjginrC6NYETm2vK3ptbJPL7ZJJZfgWYLf9s3NhaEisfJh2U5t8N5GA/exec";
-  const KEYS = { 199: "playbook", 790: "studio", 591: "studio_up" };
+  const KEYS = { 99: "playbook", 590: "studio", 990: "studio_pro", 400: "studio_pro_up" };
   const form = document.getElementById("order"), msg = document.getElementById("msg"), send = document.getElementById("send");
   if (!/^https:\/\/script\.google\.com\//.test(ENDPOINT)) { form.style.display = "none"; return; }
   const say = (text, good) => { msg.textContent = text; msg.className = "msg " + (good ? "ok" : "err"); };
