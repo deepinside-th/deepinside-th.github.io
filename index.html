@@ -114,6 +114,14 @@ section.alt{background:var(--panel)}
 .feat b{font:600 16px var(--display);display:block;margin-bottom:4px}
 .feat p{font-size:14px;color:var(--muted)}
 .need{margin-top:18px;padding:14px 18px;border-radius:12px;background:var(--panel2);font-size:14px;color:var(--muted)}
+.honest{margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.honest>div{padding:14px 18px;border-radius:12px;background:var(--panel2);font-size:14px;color:var(--muted)}
+.honest b.t{display:block;color:var(--ink);margin-bottom:6px;font-size:15px}
+.honest ul{margin:0;padding-left:18px}
+.honest li{margin:3px 0}
+.honest .no b.t{color:var(--red)}
+.install-link{display:inline-flex;align-items:center;gap:6px;font-size:14px}
+.install-link[hidden]{display:none}
 
 /* buy */
 .buy{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
@@ -268,8 +276,27 @@ footer{padding:36px 0 56px;color:var(--dim);font-size:13px;border-top:1px solid 
         <div><b>ฉากโหวต A/B</b><p>จบทุกตอนด้วยคำถามให้คนดูคอมเมนต์</p></div>
         <div><b>ได้ครบทุกตอน</b><p>คลิปมี/ไม่มีเพลง ปก 2 แบบ ชุดโพสต์ 4 แพลตฟอร์ม</p></div>
       </div>
-      <p class="need"><b style="color:var(--ink)">ต้องมี:</b> Claude Code แพ็กเกจ Pro ขึ้นไป (จ่ายแยก) · คอม Windows 10/11 ว่างราว 2 GB (Mac ใช้ได้ แต่ยังเป็นรุ่นทดลอง) · เสียง TTS ภาษาไทยเจ้าไหนก็ได้ · ติดตั้งด้วยดับเบิลคลิกครั้งเดียว</p>
-      <div class="row" style="margin-top:22px"><a class="btn gold" href="#buy" data-pick="790">ซื้อ Studio ฿790</a></div>
+      <div class="honest" id="need">
+        <div>
+          <b class="t">ต้องมีอะไรบ้าง (บอกตรงๆ)</b>
+          <ul>
+            <li>คอม Windows 10/11 ว่างราว 2 GB (Mac ใช้ได้ แต่ยังเป็นรุ่นทดลอง)</li>
+            <li>Claude แพ็กเกจ Pro ขึ้นไป ราว 20 ดอลลาร์ (~฿700) ต่อเดือน จ่ายให้ Anthropic แยกจากค่าสกิล</li>
+            <li>ไฟล์เสียงพากย์ TTS ภาษาไทย เจ้าไหนก็ได้ (ทำเอง)</li>
+            <li>เน็ตสำหรับโหลดโมเดลถอดเสียงครั้งแรกราว 700 MB, ติดตั้ง 10-30 นาที</li>
+          </ul>
+        </div>
+        <div class="no">
+          <b class="t">ไม่เหมาะกับใคร</b>
+          <ul>
+            <li>คนที่จะใช้แค่มือถือหรือ iPad</li>
+            <li>คนที่ไม่อยากจ่ายค่า Claude Pro</li>
+            <li>คนที่อยากได้คลิปพูดหน้ากล้อง หรือภาพเหมือนจริงแบบ AI video</li>
+            <li>คนที่อยากได้สไตล์อื่นนอกจากการ์ตูนเวกเตอร์ (ตอนนี้มีลุคเดียว)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row" style="margin-top:22px;align-items:center;gap:16px"><a class="btn gold" href="#buy" data-pick="790">ซื้อ Studio ฿790</a><a class="install-link" id="install-link" href="assets/install.mp4" target="_blank" rel="noopener" hidden>▶ ดูวิธีติดตั้ง 2 นาที</a></div>
     </div>
   </div></section>
 
@@ -289,7 +316,7 @@ footer{padding:36px 0 56px;color:var(--dim);font-size:13px;border-top:1px solid 
         <ol class="steps">
           <li><span>สแกน QR ด้วยแอปธนาคาร ชื่อบัญชีที่ขึ้นต้องเป็น <b>นาย อัลฮาคิมห์ อับดุลเลาะ</b> (พร้อมเพย์ 093-619-3998)</span></li>
           <li><span>กรอกฟอร์มด้านล่างพร้อมแนบสลิป (ใช้อีเมล Gmail จะได้ไฟล์เร็วที่สุด)</span></li>
-          <li><span>ตรวจยอดแล้วส่งลิงก์ดาวน์โหลดเข้าอีเมลภายในคืนเดียวกัน (ก่อน 23:00) ลิงก์เปิดได้เฉพาะอีเมลของคุณ</span></li>
+          <li><span>ตรวจยอดแล้วส่งลิงก์ดาวน์โหลดเข้าอีเมลภายในคืนเดียวกัน (ก่อน 23:00) สั่งหลัง 23:00 ได้ไฟล์ก่อนเที่ยงวันถัดไป ลิงก์เปิดได้เฉพาะอีเมลของคุณ</span></li>
         </ol>
         <form class="order" id="order" novalidate>
           <label>ชื่อ<input type="text" name="name" autocomplete="name" required maxlength="80"></label>
@@ -328,6 +355,8 @@ footer{padding:36px 0 56px;color:var(--dim);font-size:13px;border-top:1px solid 
     <details><summary>Studio ติดตั้งยากไหม</summary><p>แตกไฟล์ zip แล้วดับเบิลคลิก install.bat รอราว 10-30 นาที (โหลดโมเดลถอดเสียงไทยราว 700 MB) ติดตรงไหนทักไลน์ได้ ช่วยดูให้</p></details>
     <details><summary>คลิปที่ทำด้วย Studio เป็นของใคร</summary><p>เป็นของคุณ ลงช่องตัวเอง สร้างรายได้ หรือรับงานลูกค้าได้ไม่จำกัด แต่ห้ามแจกหรือขายตัวสกิลต่อ</p></details>
     <details><summary>ได้ไฟล์ทางไหน</summary><p>ลิงก์ Google Drive ที่เปิดได้เฉพาะอีเมลของคุณ ส่งเข้าไลน์และอีเมล ดาวน์โหลดเก็บไว้ได้ตลอด</p></details>
+    <details><summary>ใช้บนมือถือได้ไหม</summary><p>ไม่ได้ Studio ต้องรันบนคอม Windows หรือ Mac เพราะต้องใช้ Claude Code วาดและเรนเดอร์คลิปในเครื่อง ส่วน Playbook อ่านบนมือถือได้</p></details>
+    <details><summary>นอกจากค่าสกิล ต้องจ่ายอะไรอีกไหม</summary><p>ค่า Claude แพ็กเกจ Pro ราว ฿700 ต่อเดือน (จ่ายให้ Anthropic เอง สมัครเดือนเดียวก็ลองได้) กับค่าเสียงพากย์ TTS ถ้าเจ้าที่ใช้คิดเงิน ตัวสกิลไม่มีค่าเจนภาพ เพราะวาดด้วยโค้ดทั้งหมด</p></details>
     <details><summary>คืนเงินได้ไหม</summary><p>เป็นสินค้าดิจิทัล จึงไม่คืนเงินหลังส่งไฟล์ ยกเว้นไฟล์เปิดไม่ได้หรือโอนซ้ำ ทักมาได้ทันที</p></details>
   </div></section>
 </main>
